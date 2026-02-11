@@ -1,6 +1,20 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./index2.css";
 import "leaflet/dist/leaflet.css";
+  import L from "leaflet";
+
+  import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+  import markerIcon from "leaflet/dist/images/marker-icon.png";
+  import markerShadow from "leaflet/dist/images/marker-shadow.png";
+
+  delete L.Icon.Default.prototype._getIconUrl;
+
+  L.Icon.Default.mergeOptions({
+    iconRetinaUrl: markerIcon2x,
+    iconUrl: markerIcon,
+    shadowUrl: markerShadow,
+  });
+
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents, useMap } from "react-leaflet";
 import { supabase } from "./lib/supabase";
 
