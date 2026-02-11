@@ -1,0 +1,1228 @@
+:root {
+  --bg: #f6f7fb;
+  --panel: #fff;
+  --line: #e7e7ee;
+  --text: #111;
+  --muted: #667085;
+  --primary: #ff6b6b;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+}
+
+/* Sidebar */
+.sidebar {
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  padding: 14px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sidebarTitle {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.sidebarHint {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px !important;
+  opacity: 0.4 !important;
+}
+
+.leaflet-control-attribution a {
+  text-decoration: none;
+}
+
+
+/* Menu links */
+.sideLinks {
+  display: grid;
+  gap: 10px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.sideLink {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 12px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 800;
+  text-align: left;
+}
+
+.sideLink:hover {
+  border-color: #d7d7e2;
+}
+
+.sideLinkActive {
+  border-color: rgba(255, 107, 107, 0.55);
+  background: rgba(255, 107, 107, 0.12);
+}
+
+/* Main */
+.main {
+  display: grid;
+  grid-template-rows: 60px 1fr 44px;
+  min-width: 0;
+}
+
+.topbar {
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  gap: 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 120px;
+}
+
+.brandDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--primary);
+}
+
+.brandText {
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navBtn {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 8px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #222;
+}
+
+.navBtn:hover {
+  border-color: #d7d7e2;
+}
+
+.navBtnActive {
+  border-color: rgba(255, 107, 107, 0.45);
+  background: rgba(255, 107, 107, 0.12);
+}
+
+/* Content */
+.content {
+  padding: 16px;
+  overflow: auto;
+}
+
+/* Footer */
+.footer {
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footerLink {
+  font-size: 12px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.footerNote {
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+/* Buttons */
+.btnPrimary {
+  border: 1px solid rgba(255, 107, 107, 0.35);
+  background: var(--primary);
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.btnPrimary:disabled {
+  background: #f2f2f2;
+  border-color: #e5e5e5;
+  color: #777;
+  cursor: not-allowed;
+}
+
+.btnGhost {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 9px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.btnSmall {
+  padding: 7px 10px;
+  border-radius: 10px;
+  font-weight: 900;
+}
+
+/* Cards */
+.cardList {
+  display: grid;
+  gap: 10px;
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 12px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.card:hover {
+  border-color: #d7d7e2;
+}
+
+.cardActive {
+  border: 2px solid #111;
+}
+
+.cardTitle {
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.cardDesc {
+  font-size: 13px;
+  color: #333;
+  opacity: 0.85;
+  line-height: 1.35;
+}
+
+.cardMeta {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ✅ Fixed card layout */
+.cardFixed {
+  padding: 10px;
+}
+
+.cardRow {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.cardBody {
+  min-width: 0;
+  flex: 1;
+}
+
+.thumb {
+  width: 62px;
+  height: 62px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex: 0 0 auto;
+  background: #fff;
+  display: grid;
+  place-items: center;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; background:#f3f4f6; 
+  display: block;
+}
+
+.thumbBadge {
+  font-weight: 900;
+  color: #444;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* HERO */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.heroCard {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  min-height: 420px;
+}
+
+.heroImgWrap {
+  background: #eee;
+  min-height: 420px;
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heroText {
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.heroText h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.heroText p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.heroHow {
+  display: grid;
+  gap: 8px;
+}
+
+.howItem {
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.18);
+  padding: 10px 12px;
+  border-radius: 14px;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.heroNote {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Reports view */
+.reports {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reportsHeader h2 {
+  margin: 0;
+}
+
+.reportsSub {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.reportsGrid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 14px;
+  height: calc(100vh - 60px - 44px - 32px - 60px);
+  min-height: 560px;
+}
+
+.reportsGridNoMap {
+  grid-template-columns: 420px 1fr;
+}
+
+.empty {
+  color: var(--muted);
+  padding: 10px;
+}
+
+.scrollList {
+  overflow: auto;
+  padding-right: 6px;
+  border-radius: 18px;
+}
+
+/* ✅✅ FIX #1: Един сигнал = един ред (спира 2 колони) */
+.reportsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reportsList .card {
+  width: 100%;
+}
+
+.reportsDetails {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 12px;
+  min-height: 520px;
+}
+
+.detailsCard {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.detailsTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.detailsTitle {
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.detailsEmpty {
+  color: var(--muted);
+}
+
+.detailsH {
+  font-weight: 900;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+.detailsP {
+  margin-top: 8px;
+  color: #222;
+  opacity: 0.9;
+  line-height: 1.45;
+}
+
+.detailsMeta {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.detailsMap {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 360px;
+}
+
+.mapBox {
+  height: 380px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.field.checkboxRow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.needsHelpBox {
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.needsHelpTitle {
+  font-weight: 600;
+  color: #c2410c;
+  margin-bottom: 6px;
+}
+
+.needsHelpText {
+  color: #7c2d12;
+  line-height: 1.4;
+}
+
+/* Simple page */
+.simplePage {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.simplePage h2 {
+  margin-top: 0;
+}
+
+.simplePage p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.modal {
+  width: min(820px, 100%);
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.modalTitle {
+  font-weight: 900;
+}
+
+.modalBody {
+  padding: 14px;
+}
+
+.modalStep {
+  display: grid;
+  gap: 12px;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.stepActive {
+  color: #111;
+  font-weight: 900;
+}
+
+.stepSep {
+  opacity: 0.5;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.label {
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.input,
+.textarea {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: rgba(255, 107, 107, 0.6);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Animal cards */
+.animalRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 10px 0 16px;
+}
+
+.animalCard {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  background: #fff;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.12s ease;
+}
+
+.animalCard:hover {
+  transform: translateY(-1px);
+}
+
+.animalCardActive {
+  border-color: rgba(255, 107, 107, 0.6);
+  box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.12);
+}
+
+.animalThumb {
+  width: 100%;
+  height: 92px;
+  border-radius: 14px;
+  background: #f3f4f6;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animalThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 6px;
+}
+
+.animalCardLabel {
+  margin-top: 8px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.fileHint {
+  margin-top: 6px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* Images grid + click preview */
+.imgGrid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.imgTileBtn {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  display: block;
+  background: #fff;
+  padding: 0;
+  cursor: pointer;
+}
+
+.imgTileBtn img {
+  width: 100%;
+  height: 110px;
+  object-fit: contain;
+  background: #f3f4f6;
+}
+
+/* Lightbox */
+.lbOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 20000;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.lb {
+  width: min(980px, 100%);
+  height: min(720px, 100%);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+/* ✅✅ FIX #2: да НЕ се реже снимката в preview */
+.lbImgWrap {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px 72px 52px;
+  box-sizing: border-box;
+}
+
+.lbImg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.lbClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.lbNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.lbPrev {
+  left: 12px;
+}
+
+.lbNext {
+  right: 12px;
+}
+
+.lbDots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.lbDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  cursor: pointer;
+}
+
+.lbDotOn {
+  background: #fff;
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .heroCard {
+    grid-template-columns: 1fr;
+  }
+
+  .reportsGrid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .reportsDetails {
+    min-height: 420px;
+  }
+}
+
+.notice {
+  background: rgba(17, 17, 17, 0.04);
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  padding: 10px 12px;
+  border-radius: 14px;
+  color: #222;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.updates {
+  margin-top: 14px;
+  border-top: 1px dashed rgba(0,0,0,0.12);
+  padding-top: 12px;
+}
+
+.updatesTitle {
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.updatesEmpty {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.updatesList {
+  display: grid;
+  gap: 10px;
+}
+
+.updateCard {
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  background: #fff;
+  padding: 10px 12px;
+}
+
+.updateMeta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.updateType {
+  font-weight: 900;
+  color: #222;
+}
+
+.updateTime {
+  margin-left: auto;
+}
+
+.updateText {
+  font-size: 13px;
+  color: #222;
+  opacity: 0.92;
+  line-height: 1.4;
+}
+
+/* когато не показваме sidebar (не-home) */
+.noSidebar .sidebar {
+  display: none;
+}
+
+/* ако app е grid с 2 колони */
+.app.noSidebar {
+  grid-template-columns: 1fr !important;
+}
+
+/* ако main е позициониран спрямо grid колони */
+.noSidebar .main {
+  width: 100%;
+}
+
+/* =========================
+   UI POLISH + RESPONSIVE v2
+   Paste at the END of file
+   ========================= */
+
+/* Better defaults */
+:root{
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+
+  --shadow-sm: 0 6px 16px rgba(0,0,0,0.08);
+  --shadow-md: 0 12px 30px rgba(0,0,0,0.10);
+
+  --focus: 0 0 0 4px rgba(255,107,107,0.18);
+}
+
+body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, input, textarea, select{
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible{
+  outline: none;
+  box-shadow: var(--focus);
+}
+
+.btnPrimary, .btnGhost, .navBtn, .card, .imgTileBtn{
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
+}
+
+.btnPrimary:hover:not(:disabled),
+.btnGhost:hover:not(:disabled){
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Topbar stays visible and feels "app-like" */
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+}
+
+/* Make content less “boxed” and more airy */
+.content{
+  padding: 18px;
+}
+
+/* Cards */
+.card{
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+
+.cardActive{
+  border: 2px solid rgba(17,17,17,0.9);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Sidebar polish */
+.sidebar{
+  border-right: 1px solid var(--line);
+}
+.sidebarTitle{
+  letter-spacing: 0.2px;
+}
+
+/* Nav becomes chips that can scroll on smaller screens */
+.nav{
+  gap: 8px;
+}
+.navBtn{
+  white-space: nowrap;
+}
+
+/* Reports: stable height + nicer layout */
+.reportsGrid{
+  height: calc(100dvh - 60px - 44px - 32px - 60px);
+}
+
+.detailsCard{
+  border-radius: var(--radius-lg);
+}
+
+.detailsMap{
+  border-radius: var(--radius-lg);
+}
+
+/* Images grid: adapt */
+.imgGrid{
+  grid-template-columns: repeat(3, 1fr);
+}
+.imgTileBtn img{
+  height: 120px;
+}
+
+/* Make the map box responsive */
+.mapBox{
+  height: 420px;
+}
+
+/* Lightbox: better on touch */
+.lbNav{
+  width: 52px;
+  height: 52px;
+  font-size: 32px;
+  line-height: 52px;
+}
+.lbClose{
+  padding: 10px 12px;
+}
+
+/* -------------------------
+   TABLET (<= 980px)
+   ------------------------- */
+@media (max-width: 980px){
+  .content{
+    padding: 14px;
+  }
+
+  /* Home: sidebar becomes top section */
+  .app{
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar{
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+  }
+
+  .cardList{
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(260px, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 6px;
+  }
+
+  .cardList .card{
+    min-width: 260px;
+  }
+
+  /* Nav chips scroll */
+  .nav{
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav::-webkit-scrollbar{
+    height: 6px;
+  }
+
+  /* Reports stack */
+  .reportsGrid{
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+  }
+
+  .reportsDetails{
+    min-height: 0;
+  }
+
+  .detailsMap{
+    min-height: 320px;
+  }
+
+  .mapBox{
+    height: 360px;
+  }
+}
+
+/* -------------------------
+   PHONE (<= 640px)
+   ------------------------- */
+@media (max-width: 640px){
+  :root{
+    --radius: 14px;
+  }
+
+  .topbar{
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .brand{
+    min-width: 0;
+  }
+  .brandText{
+    font-size: 14px;
+  }
+
+  /* Buttons easier to tap */
+  .btnPrimary, .btnGhost, .navBtn{
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+  .btnSmall{
+    padding: 9px 12px;
+    border-radius: 14px;
+  }
+
+  /* Home hero becomes single column with less height */
+  .heroCard{
+    border-radius: var(--radius-lg);
+    min-height: 0;
+  }
+  .heroImgWrap{
+    min-height: 220px;
+  }
+  .heroText h1{
+    font-size: 22px;
+    line-height: 1.15;
+  }
+
+  /* Reports list cards compact */
+  .thumb{
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+  }
+  .cardTitle{
+    margin-bottom: 4px;
+  }
+  .cardDesc{
+    font-size: 12.5px;
+  }
+  .cardMeta{
+    font-size: 11.5px;
+  }
+
+  /* Details: tighten */
+  .detailsCard{
+    padding: 12px;
+  }
+  .detailsH{
+    font-size: 16px;
+  }
+
+  /* Images: 2 columns on phone */
+  .imgGrid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .imgTileBtn img{
+    height: 130px;
+  }
+
+  /* Modals: full-ish screen on phone */
+  .modalOverlay{
+    padding: 10px;
+  }
+  .modal{
+    width: 100%;
+    border-radius: 18px;
+  }
+
+  /* Animal cards: 2 columns */
+  .animalRow{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Map a bit smaller */
+  .detailsMap{
+    min-height: 260px;
+  }
+  .mapBox{
+    height: 300px;
+  }
+
+  /* Footer wraps nicely */
+  .footer{
+    gap: 8px;
+  }
+  .footerNote{
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* -------------------------
+   VERY SMALL (<= 380px)
+   ------------------------- */
+@media (max-width: 380px){
+  .navBtn{
+    padding: 9px 10px;
+    font-size: 12.5px;
+  }
+  .heroText{
+    padding: 14px;
+  }
+  .imgTileBtn img{
+    height: 120px;
+  }
+}
+
+
