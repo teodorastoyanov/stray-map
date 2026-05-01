@@ -696,6 +696,7 @@ export default function App() {
             Контакт
           </button>
           <span className="footerNote">При спешен случай звъни на 112.</span>
+          <span className="footerNote">Сайта е изработен от <a href="https://www.tejodidesign.eu"><s>Tejodi Design Studio.</s></a></span>
         </footer>
       </main>
 
